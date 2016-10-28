@@ -27,6 +27,10 @@ module.exports = {
                 test: /\.css$/, 
                 loader: 'style-loader!css-loader'
             },
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+            },
             { 
                 test: /\.(png|jpg)$/, 
                 /**
@@ -37,7 +41,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.css'] 
+        extensions: ['', '.js', '.css', '.scss'] 
     },
     plugins: [definePlugin]     
 };
