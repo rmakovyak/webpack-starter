@@ -1,24 +1,22 @@
-// Modules
-var webpack = require('webpack');
-
-/**
-* definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
-*/
-var definePlugin = new webpack.DefinePlugin({
-  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
-  __RELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_RELEASE || 'false')),
-});
-
 module.exports = {
     entry: './app.js',
     output: {
         filename: './public/bundle.js'       
     },
     module: {
+        preLoaders: [
+             {
+                test: /\.js$/, 
+                loader: 'eslint-loader', 
+                exclude: /node_modules/
+            }
+        ],
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                loader: [   
+                    'babel-loader'
+                ],
                 query: {
                   presets: ['es2015']
                 }
@@ -40,10 +38,12 @@ module.exports = {
             }
         ]
     },
+    eslint: {
+        configFile: './.eslintrc'
+    },
     resolve: {
         extensions: ['', '.js', '.css', '.scss'] 
-    },
-    plugins: [definePlugin]     
+    }
 };
 
 

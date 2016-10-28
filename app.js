@@ -1,10 +1,10 @@
-document.write('this is the app');
+document.write('this is the app')
 
 // require('./app/class');
-require('./styles/package');
+require('./styles/package')
 
-if (__DEV__) {
-  console.warn('Extra logging');
+function someMethod (a) {
+    return a + 1
 }
 
-
+console.log(someMethod(3))
