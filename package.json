@@ -4,7 +4,7 @@
   "description": "boilerplate for project",
   "main": "app.js",
   "scripts": {
-    "build": "BUILD_DEV=1 webpack",
+    "build": "webpack",
     "build-release": "BUILD_RELEASE=1 webpack",
     "dev": "webpack-dev-server --history-api-fallback --inline --progress --open"
   },
