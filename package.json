@@ -4,7 +4,9 @@
   "description": "boilerplate for project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "BUILD_DEV=1 webpack",
+    "build-release": "BUILD_RELEASE=1 webpack",
+    "dev": "webpack-dev-server --history-api-fallback --inline --progress"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "node-sass": "^3.10.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
