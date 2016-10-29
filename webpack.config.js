@@ -18,7 +18,7 @@ module.exports = {
                     'babel-loader'
                 ],
                 query: {
-                  presets: ['es2015']
+                  presets: ['es2015', 'react']
                 }
             },
             {
@@ -42,7 +42,7 @@ module.exports = {
         configFile: './.eslintrc'
     },
     resolve: {
-        extensions: ['', '.js', '.css', '.scss'] 
+        extensions: ['', '.js', '.css', '.scss', '.jsx'] 
     }
 };
 

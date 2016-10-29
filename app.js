@@ -1,10 +1,4 @@
-document.write('this is the app')
+import Class from './app/class';
+// import styles from './styles/package.scss';
 
-// require('./app/class');
-require('./styles/package')
-
-function someMethod (a) {
-    return a + 1
-}
-
-console.log(someMethod(3))
+console.warn(Class);
