@@ -8,5 +8,14 @@
   }
   rules: {
     "no-unused-vars": false
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "Map",
+          "List"
+        ]
+      }
+    ]
   }
 }
