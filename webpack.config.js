@@ -1,20 +1,13 @@
 module.exports = {
-    entry: './app/index.jsx',
+    entry: './app/index.js',
     output: {
         filename: './public/bundle.js'
     },
     devtool: 'source-map',
     module: {
-        preLoaders: [
-             {
-                test: /\.js$/,
-                loader: 'eslint-loader',
-                exclude: /node_modules/
-            }
-        ],
         loaders: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: [/node_modules/]
             },
@@ -35,10 +28,7 @@ module.exports = {
             }
         ]
     },
-    eslint: {
-        configFile: './.eslintrc'
-    },
     resolve: {
-        extensions: ['', '.js', '.css', '.scss', '.jsx']
+        extensions: ['', '.js', '.css', '.scss']
     }
 };
